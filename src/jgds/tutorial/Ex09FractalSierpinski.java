@@ -43,7 +43,7 @@ public class Ex09FractalSierpinski {
             GArea va = new GArea(poly, 2);
 
             Struct top = new Struct("top");
-            ArrayList<Struct> v = new ArrayList();
+            ArrayList<Struct> v = new ArrayList<Struct>();
             v.add(new Struct("v0", va));
             Struct temp;
             Ref r;

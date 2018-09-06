@@ -31,7 +31,7 @@ public class Ex11AnotherTree {
             Lib lib = new Lib();
 
             //number of levels
-            int iterations = 12;            
+//            int iterations = 12;            
             Path2D.Double poly2 = new Path2D.Double();
             poly2.moveTo(0, 0);
             poly2.lineTo(.25, 2);
@@ -45,7 +45,7 @@ public class Ex11AnotherTree {
             Struct temp;
             Ref r;
             int i;            
-            ArrayList<Struct> t = new ArrayList();
+            ArrayList<Struct> t = new ArrayList<Struct>();
             t.add(new Struct("t0", tr));
             for (i = 1; i < 12; i++) {
                 temp = new Struct("t" + i);

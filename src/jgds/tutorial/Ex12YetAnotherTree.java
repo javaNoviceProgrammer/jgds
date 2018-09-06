@@ -63,7 +63,7 @@ public class Ex12YetAnotherTree implements Const {
         Struct s = new Struct("s" + "_" + GDS2.val(d * 11 + ang * 13 + ratio * 17), fa);
         Struct w = new Struct("d0" + "_" + GDS2.val(d * 11 + ang * 13 + ratio * 17), new Ref(s, -(.5 - p) * d, 0, 0, (1 - p), 0));
         w.add(new Ref(s, d * (p - .5), 0, MIRROR, p, 180));
-        ArrayList<Struct> n = new ArrayList();
+        ArrayList<Struct> n = new ArrayList<Struct>();
         n.add(w);
         boolean odd;
         int i;

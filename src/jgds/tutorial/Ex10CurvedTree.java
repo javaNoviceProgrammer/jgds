@@ -44,7 +44,7 @@ public class Ex10CurvedTree implements Const {
             Struct s = new Struct("s", fa);
             Struct d = new Struct("d0", new Ref(s, 0, 0));
             d.add(new Ref(s, 0, 0, MIRROR, 180));
-            ArrayList<Struct> n = new ArrayList();
+            ArrayList<Struct> n = new ArrayList<Struct>();
             n.add(d);
 
             Struct top = new Struct("top");
