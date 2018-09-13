@@ -34,8 +34,8 @@ public class Ex04CircleEllipse {
 
             // Using CircleEllipse method that returns a Struct
             // Drawing a 64 sided - 10um radius circle
-            Double radX = 10.00, radY = 10.00;
-            int numberOfSides = 64, gdsLayer = 4;
+            Double radX = 30.00, radY = 30.00;
+            int numberOfSides = 1000, gdsLayer = 1;
             Struct circle = CircleEllipse(0, 0, radX, radY, numberOfSides, gdsLayer);
             lib.add(new Ref(circle, 0, 0));
             // Drawing a 64 sided - 10um x 4um ellipse 
