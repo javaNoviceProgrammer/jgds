@@ -34,7 +34,7 @@ public class Ex08Text {
             Lib lib = new Lib();
 
             // Placing a text string within a cell -> GDS
-            String label = "Bam!";
+            String label = "Baym!";
             // setup Text
             Text lb = new Text(label, 1, 50.0);  // (string,layer,size in um)
             lb.setFont("Serif");        // vector font
@@ -48,7 +48,7 @@ public class Ex08Text {
             Rectangle2D rec = a.getBounds2D();
             a.transform(AffineTransform.getTranslateInstance(-rec.getCenterX(), -rec.getCenterY()));
             a.transform(AffineTransform.getRotateInstance(-Math.PI / 2.0));
-            Struct lbl = new Struct("lblRotated", new GArea(a, 1));
+            Struct lbl = new Struct("lblRotated", new GArea(a, 2));
             lib.add(new Ref(lbl, 0, 0));
 
             lib.GDSOut(g);
