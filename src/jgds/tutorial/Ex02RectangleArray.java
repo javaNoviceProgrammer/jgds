@@ -39,7 +39,7 @@ public class Ex02RectangleArray {
             oneRectangle.add(new Rect(0.0, 0.0, 10.0, 20.0, 4));
             // adding a 4 x 5 array of rectangles, starting at (2,2)
             // spaced by 20.0 in x and 25.0um in y
-            top.add(new Array(oneRectangle, 2.0, 2.0, 4, 5, (4.0 * 20.0), (5.0 * 25.0)));
+            top.add(new Array(oneRectangle, 2.0, 2.0, 1, 5, (1.0 * 20.0), (5.0 * 25.0)));
             // Description of Array
             // Array (Struct, x, y, Columns, Rows, (Columns * DX), (Rows * DY) )
             //
