@@ -28,9 +28,10 @@ public class CurvedWg {
             GDSWriter g = new GDSWriter(dO);
             Lib lib = new Lib();
 
-            double angleDegree = 45 ; // for a full ring, set it to 361 or higher
+            double startAngleDegree = 45 ; // for a full ring, set it to 361 or higher
+            double endAngleDegree = 180 ;
 
-            Struct curvedWg = createWg(0, 0, 0.4, 10, angleDegree) ;
+            Struct curvedWg = createWg(0, 0, 0.4, 10, startAngleDegree, endAngleDegree) ;
             Ref ref = new Ref(curvedWg, 0, 0, 0, 0) ;
             lib.add(ref);
 
@@ -42,13 +43,16 @@ public class CurvedWg {
         System.out.println("done");
     }
 
-    static Struct createWg(double x0, double y0, double width, double radius, double angleDegree) {
+    static Struct createWg(double x0, double y0, double width, double radius, double startAngleDegree, double endAngleDegree) {
     	Path2D.Double path = new Path2D.Double() ; // this is the path of the center
     	path.moveTo(x0, y0);
     	int numPoints = 500 ;
+    	double xCenter = x0 - radius*Math.cos(startAngleDegree*Math.PI/180) ;
+    	double yCenter = y0 - radius*Math.sin(startAngleDegree*Math.PI/180) ;
     	for(int i=1; i<=numPoints; i++) {
-    		double xc = x0 - radius + radius*Math.cos(angleDegree*Math.PI/180.0 * i/numPoints) ;
-    		double yc = y0 + radius*Math.sin(angleDegree*Math.PI/180.0 * i/numPoints) ;
+    		double angleDegree = startAngleDegree + i*(endAngleDegree-startAngleDegree)/numPoints ;
+    		double xc = xCenter + radius*Math.cos(angleDegree*Math.PI/180.0) ;
+    		double yc = yCenter + radius*Math.sin(angleDegree*Math.PI/180.0) ;
     		path.lineTo(xc, yc);
     	}
     	BasicStroke stroke = new BasicStroke((float) width, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL) ;
