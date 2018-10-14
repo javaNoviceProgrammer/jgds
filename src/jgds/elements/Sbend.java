@@ -44,8 +44,10 @@ public class Sbend {
             int gdsLayer = 2;
             // create bezier Struct - S-Shaped curve starting at (0,0) and ending at (20, 10)
             Struct bezierShape = Bezier(x, y, cx1, cy1, cx2, cy2, x2, y2, width, gdsLayer);
-            Ref ref = new Ref(bezierShape, 0, 0) ;
-            lib.add(ref);
+            Ref ref = new Ref(bezierShape, 0, 0, 0, 0) ;
+            Struct top = new Struct("top") ;
+            top.add(ref);
+            lib.add(new Ref(top, 0, 0));
 
             lib.GDSOut(g);
             System.out.println(" Saved to " + f.getAbsolutePath());
