@@ -1,4 +1,4 @@
-package jgds.tutorial;
+package jgds.tutorial.bend;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
