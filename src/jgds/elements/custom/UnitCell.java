@@ -2,18 +2,18 @@ package jgds.elements.custom;
 
 import JGDS2.Rect;
 import JGDS2.Struct;
-import jgds.elements.CellWriter;
+import jgds.util.CellWriter;
 
 public class UnitCell extends Struct {
 	
 	String name ;
 	double w, g1, g2, g3, h1, h2, d ;
 	int layer ;
-	int dataType = 0 ;
 	
-	public UnitCell(String name) {
+	public UnitCell(String name, int layer) {
 		super(name) ;
 		this.name = name ;
+		this.layer = layer ;
 	}
 	
 	public void setParams(double w, double h1, double h2, double g1, double g2, double g3, double d) {
@@ -39,10 +39,10 @@ public class UnitCell extends Struct {
 	
 	// test
 	public static void main(String[] args) {
-		UnitCell unit = new UnitCell("unit_cell_test") ;
-		unit.setParams(4e-3, 20e-3, 40e-2, 8e-3, 8e-3, 8e-3, 10e-3);
+		UnitCell unit = new UnitCell("unit_cell_test", 1) ;
+		unit.setParams(4e-3, 20e-3, 40e-3, 20e-3, 8e-3, 8e-3, 10e-3);
 		CellWriter writer = new CellWriter("unit_cell_element") ;
-		writer.add(unit);
+		writer.addStruct(unit);
 		writer.writeGDS();
 	}
 	
