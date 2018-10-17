@@ -2,7 +2,6 @@ package jgds.elements.custom;
 
 import JGDS2.Rect;
 import JGDS2.Struct;
-import jgds.util.CellWriter;
 
 public class UnitCell extends Struct {
 	
@@ -36,16 +35,5 @@ public class UnitCell extends Struct {
 		add(new Rect(3*w+2*g2+g3, 0.0, 4*w+2*g2+g3, h1, layer));
 		add(new Rect(3*w+2*g2+g3, h1+g1, 4*w+2*g2+g3, 2*h1+g1, layer));
 	}
-	
-	// test
-	public static void main(String[] args) {
-		UnitCell unit = new UnitCell("unit_cell_test", 1) ;
-		unit.setParams(4e-3, 20e-3, 40e-3, 20e-3, 8e-3, 8e-3, 10e-3);
-		CellWriter writer = new CellWriter("unit_cell_element") ;
-		writer.addStruct(unit);
-		writer.writeGDS();
-	}
-	
-	
 
 }

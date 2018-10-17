@@ -11,7 +11,6 @@ import java.io.IOException;
 
 import JGDS2.GDSWriter;
 import JGDS2.Lib;
-import JGDS2.Rect;
 import JGDS2.Ref;
 import JGDS2.Struct;
 
@@ -27,12 +26,11 @@ public class UnitCellTest {
             Lib lib = new Lib();
             
             Struct topCell = new Struct("top") ;
-            topCell.add(new Rect(0.0, 0.0, 4e-3, 20e-3, 2));
-            topCell.add(new Rect(0.0, 44e-3, 4e-3, 44e-3+20e-3, 2));
-            topCell.add(new Rect(36e-3, 0.0, 36e-3+4e-3, 20e-3, 2));
-            topCell.add(new Rect(36e-3, 44e-3, 36e-3+4e-3, 44e-3+20e-3, 2));
-            topCell.add(new Rect(12e-3, 10e-3, 12e-3+4e-3, 10e-3+40e-3, 2));
-            topCell.add(new Rect(24e-3, 10e-3, 24e-3+4e-3, 10e-3+40e-3, 2));
+
+            UnitCell unitCell = new UnitCell("unit_cell", 1) ;
+            unitCell.setParams(4e-3, 20e-3, 40e-3, 20e-3, 8e-3, 8e-3, 10e-3);
+            
+            topCell.add(new Ref(unitCell, 0.0, 0.0));
 
             lib.add(new Ref(topCell, 0.0, 0.0));
             

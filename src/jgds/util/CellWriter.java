@@ -35,7 +35,10 @@ public class CellWriter {
             lib.add(new Ref(topCell, 0.0, 0.0));
             
             lib.GDSOut(g);
-            System.out.println(" Saved to " + f.getAbsolutePath());
+            
+            System.out.println(lib.getGrid());
+            
+            System.out.println("Saved to " + f.getAbsolutePath());
         } catch (IOException eOutput) {
             eOutput.printStackTrace();
         }
