@@ -16,11 +16,6 @@ import JGDS2.Rect;
 import JGDS2.Ref;
 import JGDS2.Struct;
 
-/**
- * Constructing S shaped bend using a Bezier curve with Basic Strokes
- * 
- * @author rob
- */
 public class die1 {
 
     public static void main(String[] args) {
@@ -33,6 +28,7 @@ public class die1 {
             Lib lib = new Lib();
             
             Struct topCell = new Struct("top") ;
+            
             Struct unitCell = new Struct("unitCell") ;
             unitCell.add(new Rect(0.0, 0.0, 4e-3, 20e-3, 2));
             unitCell.add(new Rect(0.0, 44e-3, 4e-3, 44e-3+20e-3, 2));

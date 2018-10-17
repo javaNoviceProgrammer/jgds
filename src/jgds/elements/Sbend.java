@@ -17,11 +17,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-/**
- * Constructing S shaped bend using a Bezier curve with Basic Strokes
- * 
- * @author rob
- */
 public class Sbend {
 
     public static void main(String[] args) {
