@@ -12,6 +12,7 @@ import java.io.IOException;
 import JGDS2.GDSWriter;
 import JGDS2.Lib;
 import JGDS2.Rect;
+import JGDS2.Ref;
 import JGDS2.Struct;
 
 public class UnitCellTest {
@@ -19,7 +20,7 @@ public class UnitCellTest {
     public static void main(String[] args) {
         try {
             FileOutputStream fileOUT;
-            File f = new File("unitCell.gds");
+            File f = new File("unitCellTest.gds");
             fileOUT = new FileOutputStream(f);
             DataOutputStream dO = new DataOutputStream(fileOUT);
             GDSWriter g = new GDSWriter(dO);
@@ -33,6 +34,8 @@ public class UnitCellTest {
             topCell.add(new Rect(12e-3, 10e-3, 12e-3+4e-3, 10e-3+40e-3, 2));
             topCell.add(new Rect(24e-3, 10e-3, 24e-3+4e-3, 10e-3+40e-3, 2));
 
+            lib.add(new Ref(topCell, 0.0, 0.0));
+            
             lib.GDSOut(g);
             System.out.println(" Saved to " + f.getAbsolutePath());
         } catch (IOException eOutput) {
