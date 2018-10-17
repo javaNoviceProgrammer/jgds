@@ -29,14 +29,14 @@ import javax.swing.JRadioButton;
 public class OptimalBendGUI extends JFrame {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField start;
 	private JTextField end;
 	private JTextField rate;
-	
+
 	MatlabChart fig ;
 	double xStart ;
 	double xEnd ;
@@ -44,8 +44,8 @@ public class OptimalBendGUI extends JFrame {
 	double[] x ;
 	double[] y ;
 	private JTextField lightTextField;
-	
-	
+
+
 	/**
 	 * Launch the application.
 	 */
@@ -54,6 +54,7 @@ public class OptimalBendGUI extends JFrame {
 			public void run() {
 				try {
 					OptimalBendGUI frame = new OptimalBendGUI();
+					frame.pack();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -95,7 +96,7 @@ public class OptimalBendGUI extends JFrame {
 		gbl_contentPane.columnWeights = new double[]{1.0, Double.MIN_VALUE};
 		gbl_contentPane.rowWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
-		
+
 		JPanel plotPanel = new JPanel();
 		plotPanel.setBorder(new TitledBorder(null, "plot", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints gbc_plotPanel = new GridBagConstraints();
@@ -104,7 +105,7 @@ public class OptimalBendGUI extends JFrame {
 		gbc_plotPanel.gridy = 1;
 		contentPane.add(plotPanel, gbc_plotPanel);
 		plotPanel.setLayout(new BorderLayout(0, 0));
-		
+
 		fig = new MatlabChart() ;
 		fig.plot(new double[0], new double[0]);
 		fig.RenderPlot();
@@ -112,7 +113,7 @@ public class OptimalBendGUI extends JFrame {
 		fig.setYLabel("Y (um)");
 		ChartPanel chartPanel = new ChartPanel(fig.getChart());
 		plotPanel.add(chartPanel) ;
-		
+
 		JPanel panel = new JPanel();
 		panel.setBorder(new TitledBorder(null, "Setup the function", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints gbc_panel = new GridBagConstraints();
@@ -127,7 +128,7 @@ public class OptimalBendGUI extends JFrame {
 		gbl_panel.columnWeights = new double[]{1.0, Double.MIN_VALUE};
 		gbl_panel.rowWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
-		
+
 		JPanel panel_2 = new JPanel();
 		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
 		gbc_panel_2.insets = new Insets(5, 5, 5, 5);
@@ -141,7 +142,7 @@ public class OptimalBendGUI extends JFrame {
 		gbl_panel_2.columnWeights = new double[]{0.0, 1.0, 0.0, Double.MIN_VALUE};
 		gbl_panel_2.rowWeights = new double[]{0.0, Double.MIN_VALUE};
 		panel_2.setLayout(gbl_panel_2);
-		
+
 		JLabel lblLightData = new JLabel("save GDS to:");
 		GridBagConstraints gbc_lblLightData = new GridBagConstraints();
 		gbc_lblLightData.anchor = GridBagConstraints.WEST;
@@ -149,7 +150,7 @@ public class OptimalBendGUI extends JFrame {
 		gbc_lblLightData.gridx = 0;
 		gbc_lblLightData.gridy = 0;
 		panel_2.add(lblLightData, gbc_lblLightData);
-		
+
 		lightTextField = new JTextField();
 		lightTextField.setColumns(10);
 		GridBagConstraints gbc_lightTextField = new GridBagConstraints();
@@ -158,7 +159,7 @@ public class OptimalBendGUI extends JFrame {
 		gbc_lightTextField.gridx = 1;
 		gbc_lightTextField.gridy = 0;
 		panel_2.add(lightTextField, gbc_lightTextField);
-		
+
 		JButton lightButton = new JButton("choose...");
 		lightButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -172,7 +173,7 @@ public class OptimalBendGUI extends JFrame {
 		gbc_lightButton.gridx = 2;
 		gbc_lightButton.gridy = 0;
 		panel_2.add(lightButton, gbc_lightButton);
-		
+
 		JPanel panel_3 = new JPanel();
 		GridBagConstraints gbc_panel_3 = new GridBagConstraints();
 		gbc_panel_3.insets = new Insets(5, 5, 5, 5);
@@ -186,7 +187,7 @@ public class OptimalBendGUI extends JFrame {
 		gbl_panel_3.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		gbl_panel_3.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel_3.setLayout(gbl_panel_3);
-		
+
 		JLabel lblStartX = new JLabel("a = ");
 		GridBagConstraints gbc_lblStartX = new GridBagConstraints();
 		gbc_lblStartX.anchor = GridBagConstraints.EAST;
@@ -194,7 +195,7 @@ public class OptimalBendGUI extends JFrame {
 		gbc_lblStartX.gridx = 0;
 		gbc_lblStartX.gridy = 0;
 		panel_3.add(lblStartX, gbc_lblStartX);
-		
+
 		start = new JTextField();
 		GridBagConstraints gbc_start = new GridBagConstraints();
 		gbc_start.insets = new Insets(0, 0, 5, 5);
@@ -203,21 +204,21 @@ public class OptimalBendGUI extends JFrame {
 		gbc_start.gridy = 0;
 		panel_3.add(start, gbc_start);
 		start.setColumns(10);
-		
+
 		JLabel lblNewLabel = new JLabel("");
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel.gridx = 4;
 		gbc_lblNewLabel.gridy = 0;
 		panel_3.add(lblNewLabel, gbc_lblNewLabel);
-		
+
 		JButton btnNewButton = new JButton("Set Parameters");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				lblNewLabel.setText("All set!");
 				fig.clear();
-				
+
 			}
 		});
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
@@ -226,7 +227,7 @@ public class OptimalBendGUI extends JFrame {
 		gbc_btnNewButton.gridx = 3;
 		gbc_btnNewButton.gridy = 0;
 		panel_3.add(btnNewButton, gbc_btnNewButton);
-		
+
 		JCheckBox chckbxCircularBend = new JCheckBox("Circular bend");
 		GridBagConstraints gbc_chckbxCircularBend = new GridBagConstraints();
 		gbc_chckbxCircularBend.fill = GridBagConstraints.HORIZONTAL;
@@ -234,7 +235,7 @@ public class OptimalBendGUI extends JFrame {
 		gbc_chckbxCircularBend.gridx = 6;
 		gbc_chckbxCircularBend.gridy = 0;
 		panel_3.add(chckbxCircularBend, gbc_chckbxCircularBend);
-		
+
 		JRadioButton rdbtnCurve = new JRadioButton("Curve");
 		GridBagConstraints gbc_rdbtnCurve = new GridBagConstraints();
 		gbc_rdbtnCurve.fill = GridBagConstraints.HORIZONTAL;
@@ -242,9 +243,9 @@ public class OptimalBendGUI extends JFrame {
 		gbc_rdbtnCurve.gridx = 7;
 		gbc_rdbtnCurve.gridy = 0;
 		panel_3.add(rdbtnCurve, gbc_rdbtnCurve);
-		
 
-		
+
+
 		JLabel lblEndX = new JLabel("b = ");
 		GridBagConstraints gbc_lblEndX = new GridBagConstraints();
 		gbc_lblEndX.anchor = GridBagConstraints.EAST;
@@ -252,7 +253,7 @@ public class OptimalBendGUI extends JFrame {
 		gbc_lblEndX.gridx = 0;
 		gbc_lblEndX.gridy = 1;
 		panel_3.add(lblEndX, gbc_lblEndX);
-		
+
 		end = new JTextField();
 		end.setColumns(10);
 		GridBagConstraints gbc_end = new GridBagConstraints();
@@ -261,11 +262,11 @@ public class OptimalBendGUI extends JFrame {
 		gbc_end.gridx = 1;
 		gbc_end.gridy = 1;
 		panel_3.add(end, gbc_end);
-		
+
 		JButton appendButton = new JButton("Plot");
 		appendButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 			}
 		});
 		GridBagConstraints gbc_appendButton = new GridBagConstraints();
@@ -275,7 +276,7 @@ public class OptimalBendGUI extends JFrame {
 		gbc_appendButton.gridx = 3;
 		gbc_appendButton.gridy = 1;
 		panel_3.add(appendButton, gbc_appendButton);
-		
+
 		JCheckBox chckbxBezierBend = new JCheckBox("Bezier bend");
 		GridBagConstraints gbc_chckbxBezierBend = new GridBagConstraints();
 		gbc_chckbxBezierBend.fill = GridBagConstraints.HORIZONTAL;
@@ -283,7 +284,7 @@ public class OptimalBendGUI extends JFrame {
 		gbc_chckbxBezierBend.gridx = 6;
 		gbc_chckbxBezierBend.gridy = 1;
 		panel_3.add(chckbxBezierBend, gbc_chckbxBezierBend);
-		
+
 		JRadioButton rdbtnRadiusOfCurvature = new JRadioButton("Radius of curvature");
 		GridBagConstraints gbc_rdbtnRadiusOfCurvature = new GridBagConstraints();
 		gbc_rdbtnRadiusOfCurvature.fill = GridBagConstraints.HORIZONTAL;
@@ -291,7 +292,7 @@ public class OptimalBendGUI extends JFrame {
 		gbc_rdbtnRadiusOfCurvature.gridx = 7;
 		gbc_rdbtnRadiusOfCurvature.gridy = 1;
 		panel_3.add(rdbtnRadiusOfCurvature, gbc_rdbtnRadiusOfCurvature);
-		
+
 		JLabel lblPoints = new JLabel("R0 (um) = ");
 		GridBagConstraints gbc_lblPoints = new GridBagConstraints();
 		gbc_lblPoints.anchor = GridBagConstraints.EAST;
@@ -299,7 +300,7 @@ public class OptimalBendGUI extends JFrame {
 		gbc_lblPoints.gridx = 0;
 		gbc_lblPoints.gridy = 2;
 		panel_3.add(lblPoints, gbc_lblPoints);
-		
+
 		rate = new JTextField();
 		rate.setColumns(10);
 		GridBagConstraints gbc_rate = new GridBagConstraints();
@@ -307,8 +308,8 @@ public class OptimalBendGUI extends JFrame {
 		gbc_rate.fill = GridBagConstraints.HORIZONTAL;
 		gbc_rate.gridx = 1;
 		gbc_rate.gridy = 2;
-		panel_3.add(rate, gbc_rate);		
-		
+		panel_3.add(rate, gbc_rate);
+
 		JButton exportButton = new JButton("save GDS...");
 		exportButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -321,7 +322,7 @@ public class OptimalBendGUI extends JFrame {
 		gbc_exportButton.gridx = 3;
 		gbc_exportButton.gridy = 2;
 		panel_3.add(exportButton, gbc_exportButton);
-		
+
 		JCheckBox chckbxOptimalBend = new JCheckBox("Optimal bend");
 		GridBagConstraints gbc_chckbxOptimalBend = new GridBagConstraints();
 		gbc_chckbxOptimalBend.insets = new Insets(0, 0, 0, 5);
@@ -329,7 +330,7 @@ public class OptimalBendGUI extends JFrame {
 		gbc_chckbxOptimalBend.gridx = 6;
 		gbc_chckbxOptimalBend.gridy = 2;
 		panel_3.add(chckbxOptimalBend, gbc_chckbxOptimalBend);
-		
+
 		JRadioButton rdbtnBendingLossdbcm = new JRadioButton("Bending loss (dB/cm)");
 		GridBagConstraints gbc_rdbtnBendingLossdbcm = new GridBagConstraints();
 		gbc_rdbtnBendingLossdbcm.fill = GridBagConstraints.HORIZONTAL;
