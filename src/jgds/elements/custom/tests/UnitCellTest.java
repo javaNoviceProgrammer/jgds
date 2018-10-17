@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package jgds.elements.custom;
+package jgds.elements.custom.tests;
 
 import java.io.DataOutputStream;
 import java.io.File;
@@ -13,6 +13,7 @@ import JGDS2.GDSWriter;
 import JGDS2.Lib;
 import JGDS2.Ref;
 import JGDS2.Struct;
+import jgds.elements.custom.UnitCell;
 
 public class UnitCellTest {
 

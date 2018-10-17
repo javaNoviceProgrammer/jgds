@@ -12,7 +12,7 @@ public class Die extends Struct {
 		super(name) ;
 	}
 	
-	public void setParameters(Struct unitCell, int row, int column, double dx, double dy) {
+	public void setParams(Struct unitCell, int row, int column, double dx, double dy) {
 		add(new Array(unitCell, 0.0, 0.0, column, row, column*dx, row*dy));
 	}
 
