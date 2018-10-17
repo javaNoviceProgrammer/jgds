@@ -19,7 +19,7 @@ public class UnitCellTest {
     public static void main(String[] args) {
         try {
             FileOutputStream fileOUT;
-            File f = new File("unitCellTest.gds");
+            File f = new File("unitCell.gds");
             fileOUT = new FileOutputStream(f);
             DataOutputStream dO = new DataOutputStream(fileOUT);
             GDSWriter g = new GDSWriter(dO);
