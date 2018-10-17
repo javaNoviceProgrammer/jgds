@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package jgds.elements.custom.tests;
 
 import java.io.DataOutputStream;
@@ -26,18 +22,17 @@ public class TestPolygon {
             GDSWriter g = new GDSWriter(dO);
             Lib lib = new Lib();
             
-            Struct topCell = new Struct("top") ;
+            Struct topCell = new Struct("topcell") ;
 
             Polygon polygon = new Polygon("perturbation", 1) ;
             polygon.setStart(0, 0);
             polygon.addVertex(20e-3, 0);
             polygon.addVertex(10e-3, 20e-3);
-            polygon.addVertex(5e-3, -20e-3);
             polygon.draw();
             
             topCell.add(new Ref(polygon, 0.0, 0.0));
 
-            lib.add(new Ref(topCell, 0.0, 0.0));
+            lib.add(new Ref(topCell, 0, 0));
             
             lib.GDSOut(g);
 
