@@ -25,7 +25,7 @@ public class TestPolygon {
             Struct topCell = new Struct("topcell") ;
 
             Polygon polygon = new Polygon("perturbation", 1) ;
-            polygon.setStart(0, 0);
+            polygon.start(0, 0);
             polygon.addVertex(20e-3, 0);
             polygon.addVertex(10e-3, 20e-3);
             polygon.draw();

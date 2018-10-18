@@ -16,7 +16,7 @@ public class Polygon extends Struct {
 		path = new Path2D.Double() ;
 	}
 	
-	public void setStart(double x0, double y0) {
+	public void start(double x0, double y0) {
 		path.moveTo(x0, y0);
 	}
 	
