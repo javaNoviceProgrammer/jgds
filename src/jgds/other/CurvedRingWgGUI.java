@@ -26,7 +26,7 @@ import java.awt.Toolkit;
 public class CurvedRingWgGUI extends JFrame {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 6307934649249297861L;
 	private JPanel contentPane;
@@ -47,6 +47,7 @@ public class CurvedRingWgGUI extends JFrame {
 			public void run() {
 				try {
 					CurvedRingWgGUI frame = new CurvedRingWgGUI();
+					frame.pack();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -74,7 +75,7 @@ public class CurvedRingWgGUI extends JFrame {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
+
 		setTitle("Curved Ring Waveguide Designer");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(CurvedRingWgGUI.class.getResource("/com/sun/java/swing/plaf/windows/icons/Computer.gif")));
 		setResizable(false);
@@ -89,7 +90,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbl_contentPane.columnWeights = new double[]{1.0, Double.MIN_VALUE};
 		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 1.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
-		
+
 		JPanel panel = new JPanel();
 		panel.setBorder(new TitledBorder(null, "gds path", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints gbc_panel = new GridBagConstraints();
@@ -104,7 +105,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbl_panel.columnWeights = new double[]{0.0, 1.0, 0.0, Double.MIN_VALUE};
 		gbl_panel.rowWeights = new double[]{0.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
-		
+
 		JLabel lblSaveGds = new JLabel("save GDS : ");
 		GridBagConstraints gbc_lblSaveGds = new GridBagConstraints();
 		gbc_lblSaveGds.anchor = GridBagConstraints.EAST;
@@ -112,7 +113,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbc_lblSaveGds.gridx = 0;
 		gbc_lblSaveGds.gridy = 0;
 		panel.add(lblSaveGds, gbc_lblSaveGds);
-		
+
 		path = new JTextField();
 		GridBagConstraints gbc_path = new GridBagConstraints();
 		gbc_path.insets = new Insets(0, 0, 0, 5);
@@ -121,7 +122,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbc_path.gridy = 0;
 		panel.add(path, gbc_path);
 		path.setColumns(10);
-		
+
 		JButton chooseButton = new JButton("choose...");
 		chooseButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -135,7 +136,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbc_chooseButton.gridx = 2;
 		gbc_chooseButton.gridy = 0;
 		panel.add(chooseButton, gbc_chooseButton);
-		
+
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new TitledBorder(null, "Parameters", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
@@ -150,7 +151,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbl_panel_1.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
 		gbl_panel_1.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel_1.setLayout(gbl_panel_1);
-		
+
 		JLabel lblRingRadiusum = new JLabel("Ring radius (um) : ");
 		GridBagConstraints gbc_lblRingRadiusum = new GridBagConstraints();
 		gbc_lblRingRadiusum.anchor = GridBagConstraints.EAST;
@@ -158,7 +159,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbc_lblRingRadiusum.gridx = 0;
 		gbc_lblRingRadiusum.gridy = 0;
 		panel_1.add(lblRingRadiusum, gbc_lblRingRadiusum);
-		
+
 		ringRadius = new JTextField();
 		GridBagConstraints gbc_ringRadius = new GridBagConstraints();
 		gbc_ringRadius.insets = new Insets(0, 0, 5, 0);
@@ -167,7 +168,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbc_ringRadius.gridy = 0;
 		panel_1.add(ringRadius, gbc_ringRadius);
 		ringRadius.setColumns(10);
-		
+
 		JLabel lblRingWidthum = new JLabel("Ring width (um) : ");
 		GridBagConstraints gbc_lblRingWidthum = new GridBagConstraints();
 		gbc_lblRingWidthum.anchor = GridBagConstraints.EAST;
@@ -175,7 +176,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbc_lblRingWidthum.gridx = 0;
 		gbc_lblRingWidthum.gridy = 1;
 		panel_1.add(lblRingWidthum, gbc_lblRingWidthum);
-		
+
 		ringWidth = new JTextField();
 		GridBagConstraints gbc_ringWidth = new GridBagConstraints();
 		gbc_ringWidth.insets = new Insets(0, 0, 5, 0);
@@ -184,7 +185,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbc_ringWidth.gridy = 1;
 		panel_1.add(ringWidth, gbc_ringWidth);
 		ringWidth.setColumns(10);
-		
+
 		JLabel lblGapum = new JLabel("Gap (um) : ");
 		GridBagConstraints gbc_lblGapum = new GridBagConstraints();
 		gbc_lblGapum.anchor = GridBagConstraints.EAST;
@@ -192,7 +193,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbc_lblGapum.gridx = 0;
 		gbc_lblGapum.gridy = 2;
 		panel_1.add(lblGapum, gbc_lblGapum);
-		
+
 		gap = new JTextField();
 		GridBagConstraints gbc_gap = new GridBagConstraints();
 		gbc_gap.insets = new Insets(0, 0, 5, 0);
@@ -201,7 +202,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbc_gap.gridy = 2;
 		panel_1.add(gap, gbc_gap);
 		gap.setColumns(10);
-		
+
 		JLabel lblBusRadiusum = new JLabel("Theta (degree) : ");
 		GridBagConstraints gbc_lblBusRadiusum = new GridBagConstraints();
 		gbc_lblBusRadiusum.anchor = GridBagConstraints.EAST;
@@ -209,7 +210,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbc_lblBusRadiusum.gridx = 0;
 		gbc_lblBusRadiusum.gridy = 3;
 		panel_1.add(lblBusRadiusum, gbc_lblBusRadiusum);
-		
+
 		theta = new JTextField();
 		GridBagConstraints gbc_theta = new GridBagConstraints();
 		gbc_theta.insets = new Insets(0, 0, 5, 0);
@@ -218,7 +219,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbc_theta.gridy = 3;
 		panel_1.add(theta, gbc_theta);
 		theta.setColumns(10);
-		
+
 		JLabel lblBusRadiusum_1 = new JLabel("Bus width(um) : ");
 		GridBagConstraints gbc_lblBusRadiusum_1 = new GridBagConstraints();
 		gbc_lblBusRadiusum_1.anchor = GridBagConstraints.EAST;
@@ -226,7 +227,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbc_lblBusRadiusum_1.gridx = 0;
 		gbc_lblBusRadiusum_1.gridy = 4;
 		panel_1.add(lblBusRadiusum_1, gbc_lblBusRadiusum_1);
-		
+
 		busWidth = new JTextField();
 		GridBagConstraints gbc_busWidth = new GridBagConstraints();
 		gbc_busWidth.insets = new Insets(0, 0, 5, 0);
@@ -235,7 +236,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbc_busWidth.gridy = 4;
 		panel_1.add(busWidth, gbc_busWidth);
 		busWidth.setColumns(10);
-		
+
 		JLabel lblBusRadiusum_2 = new JLabel("Bus radius (um) : ");
 		GridBagConstraints gbc_lblBusRadiusum_2 = new GridBagConstraints();
 		gbc_lblBusRadiusum_2.anchor = GridBagConstraints.EAST;
@@ -243,7 +244,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbc_lblBusRadiusum_2.gridx = 0;
 		gbc_lblBusRadiusum_2.gridy = 5;
 		panel_1.add(lblBusRadiusum_2, gbc_lblBusRadiusum_2);
-		
+
 		busRadius = new JTextField();
 		GridBagConstraints gbc_busRadius = new GridBagConstraints();
 		gbc_busRadius.fill = GridBagConstraints.HORIZONTAL;
@@ -251,7 +252,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbc_busRadius.gridy = 5;
 		panel_1.add(busRadius, gbc_busRadius);
 		busRadius.setColumns(10);
-		
+
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new TitledBorder(null, "configuration", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
@@ -265,7 +266,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbl_panel_2.columnWeights = new double[]{0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
 		gbl_panel_2.rowWeights = new double[]{1.0, Double.MIN_VALUE};
 		panel_2.setLayout(gbl_panel_2);
-		
+
 		JRadioButton allPass = new JRadioButton("All-pass");
 		buttonGroup.add(allPass);
 		GridBagConstraints gbc_allPass = new GridBagConstraints();
@@ -273,7 +274,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbc_allPass.gridx = 0;
 		gbc_allPass.gridy = 0;
 		panel_2.add(allPass, gbc_allPass);
-		
+
 		JRadioButton addDrop = new JRadioButton("Add-drop");
 		buttonGroup.add(addDrop);
 		GridBagConstraints gbc_addDrop = new GridBagConstraints();
@@ -282,7 +283,7 @@ public class CurvedRingWgGUI extends JFrame {
 		gbc_addDrop.gridx = 1;
 		gbc_addDrop.gridy = 0;
 		panel_2.add(addDrop, gbc_addDrop);
-		
+
 		JButton btnRun = new JButton("RUN");
 		btnRun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -302,7 +303,7 @@ public class CurvedRingWgGUI extends JFrame {
 					adr.setFile(path.getText());
 					adr.createGDS();
 				}
-					
+
 			}
 		});
 		GridBagConstraints gbc_btnRun = new GridBagConstraints();
