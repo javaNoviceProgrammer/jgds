@@ -108,7 +108,7 @@ public class OptimalBendGUI extends JFrame {
 
 		fig = new MatlabChart() ;
 		fig.plot(new double[0], new double[0]);
-		fig.RenderPlot();
+		fig.renderPlot();
 		fig.setXLabel("X (um)");
 		fig.setYLabel("Y (um)");
 		ChartPanel chartPanel = new ChartPanel(fig.getChart());
