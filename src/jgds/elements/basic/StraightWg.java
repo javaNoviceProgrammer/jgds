@@ -50,8 +50,8 @@ public class StraightWg extends AbstractElement {
 		objectPorts.put(name+".port1", port1) ;
 		objectPorts.put(name+".port2", port2) ;
 		// properties
-		objectProperties.put(name+"_width", width) ;
-		objectProperties.put(name+"_length", length) ;
+		objectProperties.put(name+".width", width) ;
+		objectProperties.put(name+".length", length) ;
 		// elements
 		allElements.put(name, this) ;
 	}

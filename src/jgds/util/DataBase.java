@@ -1,9 +1,10 @@
-package jgds.elements;
-
-import ch.epfl.general_libraries.utils.SimpleMap;
-import jgds.elements.positioning.Port;
+package jgds.util;
 
 import java.util.Map;
+
+import ch.epfl.general_libraries.utils.SimpleMap;
+import jgds.elements.AbstractElement;
+import jgds.elements.positioning.Port;
 
 public class DataBase {
 

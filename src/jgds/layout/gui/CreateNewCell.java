@@ -5,8 +5,8 @@ import ch.epfl.general_libraries.experiment_aut.WrongExperimentException;
 import ch.epfl.general_libraries.results.AbstractResultsDisplayer;
 import ch.epfl.general_libraries.results.AbstractResultsManager;
 import ch.epfl.javancox.experiments.builder.ExperimentConfigurationCockpit;
-import jgds.elements.DataBase;
 import jgds.layout.Cell;
+import jgds.util.DataBase;
 
 public class CreateNewCell implements Experiment {
 

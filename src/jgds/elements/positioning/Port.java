@@ -1,7 +1,7 @@
 package jgds.elements.positioning;
 
 import ch.epfl.general_libraries.clazzes.ParamName;
-import jgds.elements.DataBase;
+import jgds.util.DataBase;
 
 public class Port extends DataBase {
 
