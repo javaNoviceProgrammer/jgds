@@ -8,10 +8,12 @@ import JGDS2.GDSWriter;
 import JGDS2.Lib;
 import JGDS2.Ref;
 import JGDS2.Struct;
+import ch.epfl.general_libraries.clazzes.ParamName;
 import jgds.elements.AbstractElement;
 import jgds.elements.basic.StraightWg;
 import jgds.elements.positioning.Port;
 import jgds.elements.positioning.Position;
+import jgds.elements.positioning.ports.TwoPortConfig;
 import jgds.pdk.generic.GeneralLayer;
 import mathLib.util.CustomJFileChooser;
 
@@ -21,8 +23,8 @@ public class Cell {
 	AbstractElement[] elements ;
 
 	public Cell(
-			String cellName,
-			AbstractElement... elements
+			@ParamName(name="Cell Name") String cellName,
+			@ParamName(name="Add Elements") AbstractElement... elements
 			) {
 		this.cellName = cellName ;
 		this.elements = elements ;
@@ -54,11 +56,9 @@ public class Cell {
 	}
 
 	public static void main(String[] args) {
-		AbstractElement elem = new StraightWg("wg1", new GeneralLayer("G", 1, 0), new Port(new Position(0,0),
+		AbstractElement elem = new StraightWg("wg1", new GeneralLayer("G", 1, 0), TwoPortConfig.port_1, new Port(new Position(0,0),
 										0.4, 180), 20) ;
-		AbstractElement elem2 = new StraightWg("wg2", new GeneralLayer("G", 1, 0), new Port(new Position(0,0),
-				0.4, 90), 20) ;
-		Cell cell = new Cell("simple_cell", elem, elem2) ;
+		Cell cell = new Cell("simple_cell", elem) ;
 		cell.saveGds();
 	}
 
