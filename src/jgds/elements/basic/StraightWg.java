@@ -25,7 +25,7 @@ public class StraightWg extends AbstractElement {
 	public StraightWg(
 			@ParamName(name="Object Name") String name,
 			@ParamName(name="Layer Map") AbstractLayerMap layerMap,
-			@ParamName(name="Select port") TwoPortConfig portsConfig ,
+			@ParamName(name="Choose port") TwoPortConfig portsConfig ,
 			Port port ,
 			@ParamName(name="length (um)") double length_um
 			) {
