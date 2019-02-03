@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package jgds.elements;
+package jgds.elements.custom;
 
 import java.io.DataOutputStream;
 import java.io.File;

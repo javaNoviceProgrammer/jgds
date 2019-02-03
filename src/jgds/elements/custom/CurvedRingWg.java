@@ -1,4 +1,4 @@
-package jgds.elements;
+package jgds.elements.custom;
 
 import java.awt.BasicStroke;
 import java.awt.geom.Path2D;
