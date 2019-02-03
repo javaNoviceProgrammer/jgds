@@ -1,8 +1,9 @@
 package jgds.elements.positioning;
 
 import ch.epfl.general_libraries.clazzes.ParamName;
+import jgds.elements.DataBase;
 
-public class Port {
+public class Port extends DataBase {
 
 	/**
 	 * A port is uniquely described by its position, width, and normal direction.
@@ -32,22 +33,23 @@ public class Port {
 		angle_rad = angle_degree * Math.PI/180 ;
 		normalVec = new Position(Math.cos(normal_rad), Math.sin(normal_rad)) ;
 		edgeVec = normalVec.rotate(new Position(0,0), 90) ;
+
 	}
 
-//	public Port(
-//			@ParamName(name="Reference to Other Objects") String objectPort,
-//			@ParamName(name="Offset X (um)", default_="0") double offsetX_um,
-//			@ParamName(name="Offset Y (um)", default_="0") double offsetY_um
-//			){
-//		P = objectPorts.get(objectPort).connect().getPosition().translateXY(offsetX_um, offsetY_um) ;
-//		width_um = objectPorts.get(objectPort).connect().getWidthMicron() ;
-//		normal_degree = objectPorts.get(objectPort).connect().getNormalDegree() ;
-//		normal_rad = objectPorts.get(objectPort).connect().getNormalRad() ;
-//		angle_degree = objectPorts.get(objectPort).connect().getAngleDegree() ;
-//		angle_rad = objectPorts.get(objectPort).connect().getAngleRad() ;
-//		normalVec = objectPorts.get(objectPort).connect().getNormalVec() ;
-//		edgeVec = objectPorts.get(objectPort).connect().getEdgeVec() ;
-//	}
+	public Port(
+			@ParamName(name="Reference to Other Objects") String objectPort,
+			@ParamName(name="Offset X (um)", default_="0") double offsetX_um,
+			@ParamName(name="Offset Y (um)", default_="0") double offsetY_um
+			){
+		P = objectPorts.get(objectPort).connect().getPosition().translateXY(offsetX_um, offsetY_um) ;
+		width_um = objectPorts.get(objectPort).connect().getWidthMicron() ;
+		normal_degree = objectPorts.get(objectPort).connect().getNormalDegree() ;
+		normal_rad = objectPorts.get(objectPort).connect().getNormalRad() ;
+		angle_degree = objectPorts.get(objectPort).connect().getAngleDegree() ;
+		angle_rad = objectPorts.get(objectPort).connect().getAngleRad() ;
+		normalVec = objectPorts.get(objectPort).connect().getNormalVec() ;
+		edgeVec = objectPorts.get(objectPort).connect().getEdgeVec() ;
+	}
 
 
 	// getters to retrieve the information about the port
@@ -145,7 +147,6 @@ public class Port {
 	public String toString() {
 		return getString() ;
 	}
-
 
 	//*****************For test**************
 

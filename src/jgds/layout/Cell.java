@@ -10,14 +10,16 @@ import JGDS2.Ref;
 import JGDS2.Struct;
 import ch.epfl.general_libraries.clazzes.ParamName;
 import jgds.elements.AbstractElement;
+import jgds.elements.DataBase;
 import jgds.elements.basic.StraightWg;
 import jgds.elements.positioning.Port;
 import jgds.elements.positioning.Position;
 import jgds.elements.positioning.ports.TwoPortConfig;
-import jgds.pdk.generic.GeneralLayer;
+import jgds.pdk.generic.Layers;
 import mathLib.util.CustomJFileChooser;
+import mathLib.util.MathUtils;
 
-public class Cell {
+public class Cell extends DataBase {
 
 	String cellName ;
 	AbstractElement[] elements ;
@@ -52,14 +54,18 @@ public class Cell {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-
 	}
 
 	public static void main(String[] args) {
-		AbstractElement elem = new StraightWg("wg1", new GeneralLayer("G", 1, 0), TwoPortConfig.port_1, new Port(new Position(0,0),
+		AbstractElement elem = new StraightWg("wg1", Layers.layer1, TwoPortConfig.port_1, new Port(new Position(0,0),
 										0.4, 180), 20) ;
 		Cell cell = new Cell("simple_cell", elem) ;
 		cell.saveGds();
+
+		double x = MathUtils.evaluate("wg1_width * 2", objectProperties) ;
+		System.out.println(x);
+
+
 	}
 
 }

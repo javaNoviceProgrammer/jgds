@@ -5,6 +5,7 @@ import ch.epfl.general_libraries.experiment_aut.WrongExperimentException;
 import ch.epfl.general_libraries.results.AbstractResultsDisplayer;
 import ch.epfl.general_libraries.results.AbstractResultsManager;
 import ch.epfl.javancox.experiments.builder.ExperimentConfigurationCockpit;
+import jgds.elements.DataBase;
 import jgds.layout.Cell;
 
 public class CreateNewCell implements Experiment {
@@ -21,6 +22,7 @@ public class CreateNewCell implements Experiment {
 	public void run(AbstractResultsManager man, AbstractResultsDisplayer dis) throws WrongExperimentException {
 		cell.saveGds();
 		AbstractResultsDisplayer.showGUI = false ;
+		DataBase.clearDataBase();
 	}
 
 	public static void main(String[] args) {
