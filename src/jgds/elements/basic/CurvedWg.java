@@ -23,8 +23,9 @@ public class CurvedWg extends AbstractElement {
 			@ParamName(name="Object Name") String name,
 			@ParamName(name="Layer Map") AbstractLayerMap layerMap,
 			@ParamName(name="Choose port") TwoPortConfig portsConfig ,
-			Port port ,
-			@ParamName(name="length (um)") double radius
+			@ParamName(name="Port") Port port ,
+			@ParamName(name="Curve to RIGHT?") boolean isRight,
+			@ParamName(name="Radius (um)") double radius
 			) {
 		this.name = name ;
 		this.layerMap = layerMap ;
@@ -43,8 +44,6 @@ public class CurvedWg extends AbstractElement {
 		default:
 			break;
 		}
-
-
 
 		saveProperties() ;
 	}
